@@ -13,9 +13,23 @@ const root = document.documentElement;
 const langButton = document.querySelector("#languageToggle");
 const themeButton = document.querySelector("#themeToggle");
 const toast = document.querySelector("#toast");
-let language = localStorage.getItem("starcode-language") || (navigator.language.toLowerCase().startsWith("de") ? "de" : "en");
+
+function readSetting(key) {
+  try { return localStorage.getItem(key); }
+  catch { return null; }
+}
+
+function saveSetting(key, value) {
+  try { localStorage.setItem(key, value); }
+  catch { /* The switch still works if storage is blocked. */ }
+}
+
+const detectedLanguage = String(navigator.language || "de").toLowerCase().startsWith("de") ? "de" : "en";
+const storedLanguage = readSetting("starcode-language");
+let language = storedLanguage === "de" || storedLanguage === "en" ? storedLanguage : detectedLanguage;
 
 function applyLanguage(next) {
+  if (!translations[next]) next = "de";
   language = next;
   const dict = translations[next];
   root.lang = next;
@@ -24,7 +38,7 @@ function applyLanguage(next) {
   langButton.querySelectorAll("span").forEach((el, index) => el.classList.toggle("active", (index === 0 && next === "de") || (index === 1 && next === "en")));
   langButton.setAttribute("aria-label", dict.languageLabel);
   themeButton.setAttribute("aria-label", dict.themeLabel);
-  localStorage.setItem("starcode-language", next);
+  saveSetting("starcode-language", next);
 }
 
 function showToast(message) {
@@ -36,12 +50,12 @@ function showToast(message) {
 
 langButton.addEventListener("click", () => applyLanguage(language === "de" ? "en" : "de"));
 
-const savedTheme = localStorage.getItem("starcode-theme");
+const savedTheme = readSetting("starcode-theme");
 if (savedTheme) root.dataset.theme = savedTheme;
 else if (matchMedia("(prefers-color-scheme: light)").matches) root.dataset.theme = "light";
 themeButton.addEventListener("click", () => {
   root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
-  localStorage.setItem("starcode-theme", root.dataset.theme);
+  saveSetting("starcode-theme", root.dataset.theme);
 });
 
 document.querySelector("#copyHash").addEventListener("click", async () => {
