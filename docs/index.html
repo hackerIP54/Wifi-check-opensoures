@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://wific-install.starcode-bom.com/">
   <meta name="description" content="STARCODE LiveNet Monitor – moderner Live-Ping-, Netzwerk- und Systemmonitor für Windows.">
   <meta name="theme-color" content="#090e18">
   <title>STARCODE LiveNet Monitor</title>
@@ -52,11 +53,16 @@
             <a class="button button-secondary" href="./$main/LiveNetMonitor.exe" download>
               <span><strong data-i18n="portableButton">Portable EXE</strong><small data-i18n="portableMeta">Ohne Installation starten</small></span>
             </a>
+            <a class="button button-android" href="./downloads/LiveNetMonitor-Android.apk" download>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 9h10v8a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V9Zm2-3-2-3m8 3 2-3M9 6h6a3 3 0 0 1 3 3H6a3 3 0 0 1 3-3Zm0 6v3m6-3v3"/></svg>
+              <span><strong data-i18n="androidButton">Android APK</strong><small data-i18n="androidMeta">Android 8.0 oder neuer</small></span>
+            </a>
           </div>
           <div class="trust-row">
             <span><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg><span data-i18n="trustFree">Freeware</span></span>
             <span><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg><span data-i18n="trustNoAccount">Kein Konto</span></span>
             <span><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg><span data-i18n="trustNative">Native Windows-GUI</span></span>
+            <span><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg><span>GPLv3</span></span>
           </div>
         </div>
 
@@ -89,7 +95,7 @@
     </section>
 
     <section class="logo-line" aria-label="Produktdetails">
-      <div class="container"><span>WINDOWS 10</span><i></i><span>WINDOWS 11</span><i></i><span>64-BIT</span><i></i><span>FREEWARE</span><i></i><span>VERSION 2.2</span></div>
+      <div class="container"><span>WINDOWS 10/11</span><i></i><span>ANDROID 8+</span><i></i><span>64-BIT</span><i></i><span>GPLv3</span><i></i><span>VERSION 2.2</span></div>
     </section>
 
     <section class="section" id="features">
@@ -101,7 +107,7 @@
           <article class="feature-card reveal"><div class="feature-icon violet"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 14v3m4-8v8m4-5v5"/></svg></div><span class="number">03</span><h3 data-i18n="f3Title">Systemstatus</h3><p data-i18n="f3Text">CPU, RAM, PC-Laufzeit, lokale IP und Netzwerkadapter immer sichtbar.</p></article>
           <article class="feature-card reveal"><div class="feature-icon amber"><svg viewBox="0 0 24 24"><path d="M12 3 4 7v5c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V7l-8-4Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></div><span class="number">04</span><h3 data-i18n="f4Title">Sicherer Web-Installer</h3><p data-i18n="f4Text">HTTPS-Download mit eingebauter SHA-256-Prüfung vor jeder Installation.</p></article>
           <article class="feature-card reveal"><div class="feature-icon mint"><svg viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M10 18h4"/></svg></div><span class="number">05</span><h3 data-i18n="f5Title">Zweisprachig</h3><p data-i18n="f5Text">Deutsch oder Englisch wird automatisch erkannt und kann jederzeit gewechselt werden.</p></article>
-          <article class="feature-card reveal"><div class="feature-icon blue"><svg viewBox="0 0 24 24"><path d="M12 2v5m0 10v5M4.93 4.93l3.54 3.54m7.06 7.06 3.54 3.54M2 12h5m10 0h5M4.93 19.07l3.54-3.54m7.06-7.06 3.54-3.54"/></svg></div><span class="number">06</span><h3 data-i18n="f6Title">Modern & leicht</h3><p data-i18n="f6Text">Native Windows-Oberfläche, animierter Start und keine zusätzliche Installation nötig.</p></article>
+          <article class="feature-card reveal"><div class="feature-icon blue"><svg viewBox="0 0 24 24"><path d="M12 2v5m0 10v5M4.93 4.93l3.54 3.54m7.06 7.06 3.54 3.54M2 12h5m10 0h5M4.93 19.07l3.54-3.54m7.06-7.06 3.54-3.54"/></svg></div><span class="number">06</span><h3 data-i18n="f6Title">Windows & Android</h3><p data-i18n="f6Text">Native Apps mit animiertem Start, moderner Oberfläche und denselben Live-Messwerten.</p></article>
         </div>
       </div>
     </section>
@@ -126,7 +132,15 @@
         </div>
         <div class="download-panel reveal">
           <div><img src="./assets/logo.svg" alt=""><span><small data-i18n="readyLabel">BEREIT ZUM DOWNLOAD</small><strong>STARCODE LiveNet Monitor 2.2</strong><em data-i18n="requirements">Windows 10/11 · x64 · Freeware</em></span></div>
-          <a class="button button-primary compact" href="./downloads/LiveNetMonitorInstaller.exe" download><span><strong data-i18n="downloadNow">Jetzt herunterladen</strong><small data-i18n="webInstaller">Web-Installer</small></span></a>
+          <div class="download-buttons">
+            <a class="button button-primary compact" href="./downloads/LiveNetMonitorInstaller.exe" download><span><strong data-i18n="downloadWindows">Windows laden</strong><small data-i18n="webInstaller">Web-Installer</small></span></a>
+            <a class="button button-android compact" href="./downloads/LiveNetMonitor-Android.apk" download><span><strong data-i18n="downloadAndroid">Android laden</strong><small>APK · Android 8+</small></span></a>
+          </div>
+        </div>
+        <div class="gpl-banner reveal">
+          <div class="gpl-mark">GPL<span>v3</span></div>
+          <div><small data-i18n="openKicker">FREIE SOFTWARE</small><h3 data-i18n="openTitle">Der vollständige Android-Quellcode gehört zum Download.</h3><p data-i18n="openText">Prüfen, verändern und unter den Bedingungen der GNU GPLv3 weitergeben. Keine versteckten SDKs und keine Werbung.</p></div>
+          <a class="button button-secondary compact" href="./source/LiveNetMonitor-Android-Source-GPLv3.zip" download><span><strong data-i18n="sourceButton">Quellcode herunterladen</strong><small>ZIP · GPLv3</small></span></a>
         </div>
       </div>
     </section>
